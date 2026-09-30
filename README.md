@@ -202,6 +202,85 @@ The final SVM pipeline was evaluated using:
 * Confusion matrix
 * 5-fold cross-validation
 
+### Model Comparison
+
+The following models were evaluated on the test set:
+
+| Model                | Test Accuracy |
+| -------------------- | ------------: |
+| Decision Tree        |        96.67% |
+| Random Forest        |        90.00% |
+| SVM                  |       100.00% |
+| Gaussian Naive Bayes |        96.67% |
+| Perceptron           |        76.67% |
+| MLP                  |       100.00% |
+
+### Cross-Validation — Decision Tree
+
+The tuned Decision Tree was evaluated using 5-fold cross-validation:
+
+| Metric                |     Result |
+| --------------------- | ---------: |
+| Mean CV Accuracy      | **94.17%** |
+| CV Standard Deviation |  **2.04%** |
+| Fold 1                |     91.67% |
+| Fold 2                |     95.83% |
+| Fold 3                |     95.83% |
+| Fold 4                |     95.83% |
+| Fold 5                |     91.67% |
+
+The relatively small standard deviation indicates that the Decision Tree's validation accuracy was fairly consistent across these five folds.
+
+### Final SVM Pipeline
+
+The final classification pipeline combines:
+
+```text
+StandardScaler → Linear SVM
+```
+
+The pipeline achieved:
+
+**Test Accuracy: 100.00%**
+
+### Classification Report
+
+| Class   | Precision | Recall | F1-Score |
+| ------- | --------: | -----: | -------: |
+| Class 0 |      1.00 |   1.00 |     1.00 |
+| Class 1 |      1.00 |   1.00 |     1.00 |
+| Class 2 |      1.00 |   1.00 |     1.00 |
+
+### Confusion Matrix
+
+```text
+[[10  0  0]
+ [ 0 10  0]
+ [ 0  0 10]]
+```
+
+All 30 samples in the test set were classified correctly.
+
+The model therefore made no classification errors on this particular test split.
+
+### Additional Experiments
+
+The project also investigated:
+
+* Feature scaling
+* Hyperparameter tuning using GridSearchCV
+* 5-fold cross-validation
+* Feature selection using SelectKBest
+* Principal Component Analysis (PCA)
+* PCA + SVM
+* K-Means clustering
+* Elbow method
+* Silhouette score
+* Adjusted Rand Index (ARI)
+
+These experiments were used to understand how different preprocessing methods, supervised learning algorithms, dimensionality reduction techniques, and unsupervised learning methods affect the Iris classification problem.
+
+
 The exact results are available in the notebook.
 
 ## 🎓 Key Learnings
