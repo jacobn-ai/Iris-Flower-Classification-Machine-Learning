@@ -8,6 +8,10 @@ The main goal is to classify Iris flowers into three species based on their sepa
 
 The project also explores feature scaling, feature selection, dimensionality reduction, hyperparameter tuning, cross-validation, and unsupervised clustering.
 
+Complete ML workflow
+• Dataset → EDA → Visualization → Preprocessing → Train/Test Split → Multiple Models → Evaluation →
+Cross-Validation → Hyperparameter Tuning → PCA → Clustering → Neural Network → Final
+
 ## 📊 Dataset
 
 The project uses the **Iris Species dataset**.
